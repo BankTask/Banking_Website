@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body style="background-color:ivory">
+
+    <form action="{% url 'form' %}" method="post">
+        {% csrf_token %}
+        Click Submit to display the application form
+        <br>
+        <br>
+        <input type ="submit" >
+    </form>
+
+
+</body>
+</html>

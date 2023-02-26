@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+       input[type=checkbox] {
+            vertical-align: middle;
+            position: relative;
+            bottom: 1px;
+        }
+
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body style="background-color:ivory">
+<h1 style="text-align:center">APPLICATION FORM</h1>
+
+<form action="{% url 'form' %} " method="post">
+
+    {% csrf_token %}
+    Enter Your Name <input type ="text" name="name" placeholder="Name"><br>
+    Enter Your DOB  <input type ="date" name="dob" placeholder="Date Of Birth"><br>
+    Enter Your Age  <input type ="number" name="age" placeholder="Age"><br>
+    Enter Your Gender  <input type ="text" name="gender" placeholder="Gender"><br>
+    Enter Your Contact  <input type ="number" name="contact" placeholder="Phone Number"><br>
+    Enter Your Mail Id  <input type ="email" name="mail" placeholder="Email"><br>
+    Enter Your Address  <input type ="text" name="address" placeholder="Address"><br>
+    Enter Your District <select name="district" id="district">
+    <option value="" selected="selected">Select District</option>
+    <option>Ernakulam</option>
+    <option>Palakkad</option>
+    </select>
+    <br>
+    Enter Your Branch<select name="branch" id="branch">
+    <option value="" selected="selected">Select Branch</option>
+    <option value="Ernakulam1">Edappilly</option>
+    <option value="Ernakulam2">Cochin</option>
+    <option value="Palakkad1">Olavacode</option>
+    <option value="Palakkad2">Malampuzha</option>
+    </select>
+    <br>
+    Enter the Account Type <select name="account" id="account">
+    <option value="" selected="selected">Select Account Type</option>
+    <option value="current">Current Account</option>
+    <option value="savings">Savings Account</option>
+    <option value="demat">Demat Account</option>
+    </select>
+    <br>
+    Materials Provided<br>
+    <label><input type="checkbox">Debit Card</label>
+    <label><input type="checkbox">Credit Card</label>
+    <label><input type="checkbox">CheckBook</label>
+    <label><input type="checkbox">Pass Book</label>
+        <br>
+    <input type="submit" value = "APPLY" >
+</form>
+
+<form action="{% url 'index' %} " method="post">
+    {% csrf_token %}
+    <a href="logout"><input type="submit" value = "LOGOUT" ></a>
+</form>
+</body>
+</html>
